@@ -1,21 +1,40 @@
 <?php
-        session_start();
+        // session_start();
+		include("control.php");
+		$getdata = new data();
+		$select = $getdata -> select_all_admin();
         // or empty()
-        if($_SESSION['username'] == ""){
-            // new chua login ->goi loigin.php
-            header("Location:login.php");
-        }else {
-            
-        }
+        // if($_SESSION['username'] == ""){
+        //     // new chua login ->goi loigin.php
+        //     // header("Location:login.php");
+        // }else {
+        //     echo "<h1>Hello" .$_SESSION['']."<a href='logout.php'";
+        // }
 ?>
-
 <!DOCTYPE html>
 <!-- Website template by freewebsitetemplates.com -->
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Contact - Astronomy Website Template</title>
+	<title>Astronomy Website Template</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<style>
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+		color:#fff;
+		font-weight:700;
+	}
+	td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+	tr:nth-child(even) {
+		background-color: #ccc;
+	}
+</style>
 </head>
 <body>
 	<div id="header">
@@ -24,7 +43,9 @@
 				<a href="Trang1.php"><img src="images/logo.png" alt="LOGO"></a>
 			</div>
 			<ul id="navigation">
-				
+				<li class="selected">
+					<a href="Trang1.php">Home</a>
+				</li>
 				<li>
 					<a href="about.php">About</a>
 				</li>
@@ -34,64 +55,45 @@
 				<li>
 					<a href="gallery.php">Gallery</a>
 				</li>
-				<li class="selected">
+				<li>
 					<a href="contact.php">Contact Us</a>
-                    <?php 
-                        echo $_SESSION['username']."<a href='logout.php'>-LOGOUT</a>";
-                    ?>
+				</li>
+				<li>
+					<a href="login.php">Login</a> <span style="color:#fff;">/</span>
+					<a href="logout.php">Logout</a>
 				</li>
 			</ul>
 		</div>
 	</div>
+
 	<div id="contents">
-		<div id="contact" class="wrapper clearfix">
-			<div id="sidebar">
-				<ul>
-					<li>
-						<a href="blog.php"><img src="images/earth-small.jpg" alt="Img" height="154" width="213"></a>
-					</li>
-					<li>
-						<a href="blog.php"><img src="images/spaceshuttle-closeup.jpg" alt="Img" height="154" width="213"></a>
-					</li>
-				</ul>
-				<div class="click-here">
-					<h1>Lorem Ipsum Dolor!</h1>
-					<a href="Trang1.php" class="btn1">Click Here!</a>
-				</div>
-			</div>
-			<div class="main">
-				<h1>Contact Us</h1>
-				<form  method="post">
-					<ul>
-						<li>
-							<label>Enter your full name here.</label>
-							<input type="text" name="txtName" value="Full Name" onBlur="javascript:if(this.value==''){this.value=this.defaultValue;}" onFocus="javascript:if(this.value==this.defaultValue){this.value='';}">
-						</li>
-						<li>
-							<label>Enter your email address here.</label>
-							<input type="email" name="txtEmail" value="Email Address" onBlur="javascript:if(this.value==''){this.value=this.defaultValue;}" onFocus="javascript:if(this.value==this.defaultValue){this.value='';}">
-						</li>
-						<li>
-							<label>Enter the Subject message here.</label>
-							<input type="text" name="txtSubject" value="Subject" onBlur="javascript:if(this.value==''){this.value=this.defaultValue;}" onFocus="javascript:if(this.value==this.defaultValue){this.value='';}">
-						</li>
-						<li>
-							<label class="msg">Enter your Message here.</label>
-							<textarea name="txtMessage" onBlur="javascript:if(this.value==''){this.value=this.defaultValue;}" onFocus="javascript:if(this.value==this.defaultValue){this.value='';}">Message</textarea>
-							<div class="checkbox">
-								<label for="terms">
-									<input type="checkbox" name="txtTerm" id="terms" value="term">
-									I agree to the Terms and Conditions</label>
-								<br>
-								<label for="subscribe">
-									<input type="checkbox" name="txtSubscrice" id="subscribe" value="subscrice">
-									Subscribe to newsletter</label>
-							</div>
-							<input type="submit" name="submit" value="Send Now" class="btn3">
-						</li>
-					</ul>
-				</form>
-			</div>
+		<div id="adbox">
+			<table>
+				<tr>
+					<td>ID</td>
+					<td>username</td>
+					<td>Province</td>
+					<td>Email</td>
+					<td>Avartar</td>
+					<td>Gender</td>
+					<td>Hobbby</td>
+				</tr>
+				<?php
+				foreach ($select as $se) {
+				?>
+				<tr>
+					<td><?php echo($se['ID_regis']); ?></td>
+					<td><?php echo($se['name_regis']); ?></td>
+					<td><?php echo($se['province']) ?></td>
+					<td><?php echo($se['email']) ?></td>
+					<td><?php echo($se['file']) ?></td>
+					<td><?php echo($se['gender']) ?></td>
+					<td><?php echo($se['hobby']) ?></td>
+				</tr>
+				<?php 
+					}
+				?>
+			</table>
 		</div>
 	</div>
 	<div id="footer">
@@ -173,9 +175,6 @@
 			</div>
 		</div>
 	</div>
-	<?php 
-	
-	
-	?>
+
 </body>
 </html>

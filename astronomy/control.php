@@ -67,6 +67,13 @@
             $run = mysqli_query($conn,$sql);
             return $run;
         }
+
+        public function select_all_admin(){
+            global $conn;
+            $sql = "SELECT * FROM register";
+            $run = mysqli_query($conn,$sql);
+            return $run;
+        }
     }
 
     
