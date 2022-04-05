@@ -38,20 +38,20 @@
                         <label for="pwd">Password:</label>
                         <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="txtpass"/>
                     </div>
-                    <input type="submit" class="btn btn-primary" name="submit" value="Submit"></input>
+                    <input type="submit" class="btn btn-primary" name="submit1" value="Submit"></input>
                 </form>
 
                 <?php 
-                    if(isset($_POST['submit'])){
+                    if(isset($_POST['submit1'])){
                         if(empty($_POST['txtemail']) || empty($_POST['txtpass'])){
                             echo "<script>alter('Thong tin k0 duoc de trong')</script>";
                         }else{
                             $login = $get_data -> login($_POST['txtemail'],$_POST['txtpass']);
                             if ($login == 1) {
-                                $_SESSION['Email'] = $_POST['txtuser'];
-                                header("location:about.html");
+                                $_SESSION['Email'] = $_POST['txtemail'];
+                                header("location:index.php");
                             }else {
-                                echo "<script>alert('Login fail')</script>";
+                                echo "<script>alert('Email or password incorrect')</script>";
                             }
                         }
                     }

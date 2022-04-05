@@ -10,6 +10,7 @@
             header("Location:login.php");
         }else {
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +18,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <link rel="stylesheet" href="./css/admin_user.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./css/admin.css">
 </head>
 <body>
     <div class="wrapper">
@@ -32,26 +33,24 @@
                         <li><a href="Trang1.php">Vào trang web</a></li>
                         <li><a href="#">Liên hệ</a></li>
                         <li><a href="#">Trợ giúp</a></li>
-                        <li><a href="logout.php">Đăng xuất</a></li>
+						<li><a href="logout.php">Đăng xuất</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="ad_header-name" style="display:flex;width:200px">
-                <div class="ad_text_headerL">
-                    <span>Xin chao </span>
-                    <?php 	
-                        foreach($select as $se){
-                            if($_SESSION['username'] == $se['name_regis']){
-                                echo ($se['name_regis']);
-                                $avatar = $se['file'];
-                            }
-                        }
-                    ?>
-                </div>
-				<img class="imgAD" width="50px" height="50px" src="./images/<?php echo $avatar; ?>" style="border-radius:50%">
+            <div class="ad_header-name">
+				<span>Xin chao </span>
+				<?php 	
+					foreach($select as $se){
+						if($_SESSION['username'] == $se['name_regis']){
+							echo ($se['name_regis']);
+							$avatar = $se['file'];
+						}
+					}
+				?>
+				<img class="imgAD" width="50px" height="50px" src="./images/<?php echo $avatar; ?>">
             </div>
         </div>
-        <div class="ad_main" >
+        <div class="ad_main">
             <div class="main_nav">
                 <ul>
                     <li><i class='bx bxs-home-heart icon_ad'></i><a href="admin.php">Trang chủ Admin</a></li>
@@ -60,16 +59,50 @@
                 </ul>
             </div>
 
-            <div class="main_content" style="background-color: #020a13;height: 100%;width: 80%;color:#fff;margin:0 auto;">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis exercitationem assumenda magni numquam quibusdam animi, tenetur beatae fuga repellendus enim itaque atque quia, aliquid, nam blanditiis nulla sint ducimus ipsam.</p>
+            <div class="main_content">
+			<div id="contents">
+		<div id="adbox1" style="margin-bottom:300px;">
+			<table>
+				<tr>
+					<td>ID</td>
+					<td>username</td>
+					<td>Province</td>
+					<td>Email</td>
+					<td>Avartar</td>
+					<td>Gender</td>
+					<td>Hobbby</td>
+					<td colspan="2">Tùy chọn</td>
+				</tr>
+				<?php
+				foreach ($select as $se) {
+				?>
+				<tr>
+					<td><?php echo($se['ID_regis']); ?></td>
+					<td><?php echo($se['name_regis']); ?></td>
+					<td><?php echo($se['province']) ?></td>
+					<td><?php echo($se['email']) ?></td>
+					<td><?php echo($se['file']) ?></td>
+					<td><?php echo($se['gender']) ?></td>
+					<td><?php echo($se['hobby']) ?></td>
+					<td class="suaxoa"><a href="admin_sua_register.php?edit=<?php  echo $se['ID_regis']?>">Sửa</a></td>
+					<td class="suaxoa"><a href="admin_xoa_register.php?delete=<?php  echo $se['ID_regis']?>" onClick="return confirm('Bạn có chắc chắn muốn xóa không?')">Xóa</a></td>
+				</tr>
+				<?php 
+					}
+				?>
+			</table>
+		</div>
+	</div>
             </div>
         </div>
         <div class="ad_footer">
-            <h2>Bản quyền thuộc về ENoNhimsCarp</h2>
-        </div>
+			<h2>Bản quyền thuộc về ENoNhimsCarp</h2>
+		</div>
     </div>
+	<?php
+		}
+	?>
 </body>
 </html>
-<?php 
-    }
-?>
+
+

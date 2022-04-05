@@ -37,7 +37,7 @@
                             Blog
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Add Blog</a>
+                            <a class="dropdown-item" href="./blog.php">Add Blog</a>
                         </div>
                     </li>
 
@@ -53,7 +53,7 @@
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Change Password</a>
-                            <a class="dropdown-item" href="#">LogOut</a>
+                            <a class="dropdown-item" href="logout.php">LogOut</a>
                         </div>
                     </li>
                 </ul>

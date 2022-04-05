@@ -16,21 +16,6 @@
         <title>Facebook register</title>
     </head>
     <body>
-        <header>
-            <!-- <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 3</a>
-                    </li>
-                </ul>
-            </nav> -->
-        </header>
         <main>
             <div class="container main_login">
                 <div class="row">

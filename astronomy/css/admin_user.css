@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+}
+
+.wrapper .ad_header{
+    height: 80px;
+    width: 100%;
+    background-color:#070707;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+.ad_header_left{
+    height: 80px;
+    padding-left: 10px;
+}
+
+.ad_header-logo h2{
+    line-height: 80px;
+    position: relative;
+}
+
+.ad_header-nav
+{
+    position: absolute;
+    top: 30px;
+    left: 198px;
+}
+
+.ad_header-nav ul li{
+    list-style: none;
+    display: inline-block;
+}
+.ad_header-nav ul li a{
+    color: #fff;
+    padding: 0 5px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.ad_header-name span{
+    line-height: 80px;
+}
+.imgAD{
+    width: 100%;
+    height: 100%;
+}
+.ad_header-name img{
+    line-height: 80px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+/*  */
+.ad_main{
+    background-color: #0f3e5b;
+    margin-top: 80px;
+    width: 100%;
+    height: 600px;
+    position: absolute;
+}
+
+.ad_main .main_nav{
+    width: 20%;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    position:relative;
+}
+
+.main_nav>ul>li{
+    list-style: none;
+    position: relative;
+    margin: 10px 0;
+}
+
+.main_nav>ul>li::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: chocolate;
+
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    transition: 1s;
+}
+
+.main_nav>ul>li:hover::after{
+    width: 100%;
+}
+
+.main_nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.main_nav .icon_ad {
+    padding: 10px;
+}
+/*  */
+#contents{
+    max-width: 800px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color:#fff;
+    font-weight:700;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+    tr:nth-child(even) {
+    background-color: #ccc;
+}
+.suaxoa a{
+    text-decoration:none;
+    color:yellow;
+}
+/*  */
+.ad_main  .main_content{
+    margin-left: 20px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+/*  */
+.ad_footer{
+    height: 150px;
+    width: 100%;
+    background-color:#070707;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.ad_footer>h2{
+    color: #fff;
+    text-align: center;
+    line-height: 150px;
+}
+

@@ -53,7 +53,7 @@
 		<div class="body clearfix">
 			<div class="click-here">
 				<h1>REGISTER THE UNIVERS</h1>
-				<a href="registration.php" class="btn2">Click Here!</a>
+				<a href="register.php" class="btn2">Click Here!</a>
 			</div>
 			<p style="font-size:12px;">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec mi tortor. Phasellus commodo semper vehicula. Praesent aliquam semper massa et scelerisque. Suspendisse dapibus interdum diam, non varius nisl laoreet at. Pellentesque imperdiet molestie sollicitudin. Sed nec magna nibh, sed interdum nisi. Mauris vel pretium nibh. Morbi congue velit quis eros imperdiet ac el eifend elit condimentum. Nulla vestibulum dictum tellus quis iaculis. Duis a diam vitae sem tristique vestibulum. Praesent dapibus, tortor nec hendrerit pulvinar, lectus tortor viverra ante,

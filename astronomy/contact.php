@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
+
 	<div id="header">
 		<div class="wrapper clearfix">
 			<div id="logo">

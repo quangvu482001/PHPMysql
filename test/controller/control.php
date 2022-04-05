@@ -28,5 +28,21 @@
             $num = mysqli_num_rows($query);
             return $num;
         }
+
+        // add blog
+        // blog.php
+        public function add_blog($author,$title_blog,$date_blog,$sort_content_blog,$long_content){
+            global $conn;
+            $sql = "insert into addblog(author,title_blog,date_blog,sort_content_blog,long_content) values('$author','$title_blog','$date_blog','$sort_content_blog','$long_content')";
+            $run = mysqli_query($conn,$sql);
+            return $run;
+        }
+
+        public function select_db_blog(){
+            global $conn;
+            $sql = "SELECT * FROM addblog";
+            $run = mysqli_query($conn,$sql);
+            return $run;
+        }
     }
 ?>
