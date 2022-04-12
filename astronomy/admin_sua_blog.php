@@ -2,7 +2,8 @@
 		session_start();
 		include("control.php");
 		$getdata = new data();
-		$select = $getdata -> select_id_blog($_GET['edit']); // $_GET['edit'] Lâý DL trùng với ID truyền từ dòng edit của trang web  // Lay id_regis tu url
+		$select = $getdata -> select_id_blog($_GET['edit']); 
+		 // $_GET['edit'] Lâý DL trùng với ID truyền từ dòng edit của trang web  // Lay id_regis tu url
 ?>
 <!DOCTYPE html>
 <html>
@@ -104,12 +105,10 @@
         </form>
 		<?php 
         if(isset($_POST['register'])){
-            $update_now = $getdata->update_regis($_GET['edit'],$_POST['txtTitle'],$_POST['txtDate'],$_POST['txtSContent'] , $_POST['txtLContent'] );
+            $update_now = $getdata->update_blog($_GET['edit'],$_POST['txtTitle'],$_POST['txtDate'],$_POST['txtSContent'] , $_POST['txtLContent'] );
             if($update_now){
                 echo "<script>alert('Update success')</script>";
                 echo "<script>window.location.href='admin_user.php';</script>";
-                // header("location:admin.php");
-                // echo "<script>window.location.href='admin.php';</script>";
             }else{
                 echo "<script>alert('Update fail')</script>";
             }

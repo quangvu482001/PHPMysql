@@ -8,11 +8,7 @@
         if($_SESSION['username'] == ""){
             header("Location:login.php");
         }else {
-
-			// better coments
-			// chi ho tro cmt trong php
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +18,18 @@
     <title>Admin</title>
     <link rel="stylesheet" href="./css/admin_user.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+	<style>
+		table{
+			margin-top:50px;
+		}
+	</style>
 </head>
 <body>
     <div class="wrapper">
         <div class="ad_header">
             <div class="ad_header_left">
                 <div class="ad_header-logo">
-                    <h2>LOGO ADMIN</h2>
+                    <h2>LOGO User</h2>
                 </div>
                 <div class="ad_header-nav">
                     <ul>
@@ -41,23 +42,18 @@
             </div>
             <div class="ad_header-name">
 				<span>Xin chao </span>
-				<?php 	
-					foreach($select as $se){
-						if($_SESSION['username'] == $se['name_regis']){
-							echo ($se['name_regis']);
-							$avatar = $se['file'];
-						}
-					}
-				?>
+				<span>
+				
+				</span>
 				<img class="imgAD" width="50px" height="50px" src="./images/<?php echo $avatar; ?>">
             </div>
         </div>
         <div class="ad_main">
             <div class="main_nav">
                 <ul>
-                    <li><i class='bx bxs-home-heart icon_ad'></i><a href="admin.php">Trang chủ Admin</a></li>
                     <li><i class='bx bx-spreadsheet icon_ad'></i><a href="admin_user.php">Quản trị người dùng</a></li>
                     <li><i class='bx bx-spreadsheet icon_ad'></i><a href="admin_blog.php">Quản trị nội dung</a></li>
+                    <li><i class='bx bx-spreadsheet icon_ad'></i><a href="admin_add_blog.php">Thêm bài viết mới</a></li>
                 </ul>
             </div>
 

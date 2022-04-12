@@ -1,9 +1,7 @@
-
 <?php 
         session_start();
         include("./control.php");
         $get_data = new data();
-        $select = $get_data->select_role();
 ?>
 
 <!DOCTYPE html>
@@ -45,16 +43,22 @@
             }else{
                 $login = $get_data -> login($_POST['txtuser'],$_POST['txtpw']);
                 if ($login == 1) {
-                   if($e["role"] == 1){
                     $_SESSION['username'] = $_POST['txtuser'];
-                    header("location:admin.php");
-                    // echo "<script>alert('Login success')</script>";
-                   }else{
-                       header("location:admin_user.php");
-                   }
-                }else {
+
+                    $select = $get_data -> select_role($_POST['txtuser']);
+                    foreach ($select as $se) {
+                        echo $se['role'];
+                        if($se['role'] == 1){
+                            header("location:admin.php");
+                        }else{
+                            // echo "<script>alert('Çhao mung ban den voi user_Admin')</script>";
+                            header("location:admin_user.php");
+                        }
+                    }
+                } else {
                     echo "<script>alert('Login fail')</script>";
                 }
+            
             }
         }
     ?> 

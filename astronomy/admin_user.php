@@ -53,7 +53,6 @@
         <div class="ad_main">
             <div class="main_nav">
                 <ul>
-                    <li><i class='bx bxs-home-heart icon_ad'></i><a href="admin.php">Trang chủ Admin</a></li>
                     <li><i class='bx bx-spreadsheet icon_ad'></i><a href="admin_user.php">Quản trị người dùng</a></li>
                     <li><i class='bx bx-spreadsheet icon_ad'></i><a href="admin_blog.php">Quản trị nội dung</a></li>
                 </ul>

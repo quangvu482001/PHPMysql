@@ -104,6 +104,13 @@
             return $run;
         }
 
+        public function delete_user_blog($ID){
+            global $conn;
+            $sql = "DELETE FROM blog WHERE ID = $ID";
+            $run = mysqli_query($conn,$sql);
+            return $run;
+        }
+
 
         // 4/5/2021
         public function select_all_blog(){
@@ -131,10 +138,19 @@
         }
 
         // TODO:
-        function select_role(){
+        function select_role($ten){
             global $conn;
-            $sql = "SELECT role FROM register";
+            $sql = "SELECT * FROM register where name_regis = '$ten'";
             $run = mysqli_query($conn,$sql);
+            return $run;
+        }
+
+        public function in_blog($title, $Date, $S_Content, $L_content) //Khai bao bien len ten ham
+        {
+            global $conn;
+            $sql = "insert into blog(title, Date, S_Content, L_content)
+                value('$title', '$Date', '$S_Content', '$L_content')";
+            $run = mysqli_query($conn, $sql);
             return $run;
         }
 
