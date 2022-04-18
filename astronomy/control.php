@@ -130,8 +130,8 @@
             $sql = "UPDATE blog 
                     SET title = '$title', 
                     Date = '$Date', 
-                        filS_Contente = '$S_Content', 
-                        L_content='$L_content',
+                        S_Content = '$S_Content', 
+                        L_content='$L_content'
                     WHERE ID = $ID_update";
             $run = mysqli_query($conn,$sql);
             return $run;
